@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+	<meta charset="utf-8">>
 	<title>Simple Canvas</title>
 </head>
 <body>
@@ -18,11 +19,9 @@
 		var paddleX = (canvas.width-paddleWidth)/2;
 		var rightPressed = false;
 		var leftPressed = false;
-
 		document.addEventListener("keydown", keyDownHandler, false);
 		document.addEventListener("keyup", keyUpHandler, false);
 		document.addEventListener("mousemove", mouseHandler, false);
-
 		function mouseHandler(e){
 			if(e.pageX < canvas.width && e.pageX > (paddleX + paddleWidth)/2){
 				paddleX = (e.pageX + paddleWidth)/2;
@@ -31,7 +30,6 @@
 				paddleX = e.pageX;
 			}
 		}
-
 		function keyDownHandler(e) {
 		    if(e.keyCode == 39) {
 		        rightPressed = true;
@@ -48,7 +46,6 @@
 		        leftPressed = false;
 		    }
 		}
-
 		function drawBall() {
 		    ctx.beginPath();
 		    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -63,7 +60,6 @@
 		    ctx.fill();
 		    ctx.closePath();
 		}
-
 		function draw() {
 		    ctx.clearRect(0, 0, canvas.width, canvas.height);
 		    drawBall();
